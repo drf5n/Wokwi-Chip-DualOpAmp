@@ -33,6 +33,7 @@ https://wokwi.com/projects/409320061010147329
 ## Examples
 
 * [Dual OpAmp  Demo -- tabbed](https://wokwi.com/projects/409320061010147329)
+* [Dual OpAmp  Demo -- github dependency](https://wokwi.com/projects/411497264908638209)
 
 ## See also:
 
