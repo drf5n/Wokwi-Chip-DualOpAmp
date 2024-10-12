@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "author": "David Forrest",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": -141.34, "left": -29.33, "attrs": {} },
+    { "type": "chip-dual-opamp", "id": "chip1", "top": 97.02, "left": 158.4, "attrs": {} },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "pot1",
+      "top": 120.4,
+      "left": -188,
+      "rotate": 270,
+      "attrs": { "travelLength": "30", "value": "512" }
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "pot2",
+      "top": 120.4,
+      "left": -92,
+      "rotate": 270,
+      "attrs": { "travelLength": "30", "value": "512" }
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "pot3",
+      "top": 91.6,
+      "left": 244,
+      "rotate": 270,
+      "attrs": { "travelLength": "30", "value": "512" }
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "pot4",
+      "top": 91.6,
+      "left": 349.6,
+      "rotate": 270,
+      "attrs": { "travelLength": "30", "value": "512" }
+    },
+    { "type": "wokwi-vcc", "id": "vcc1", "top": 269.56, "left": 172.8, "attrs": {} }
+  ],
+  "connections": [
+    [ "uno:GND.2", "chip1:GND", "black", [ "v0" ] ],
+    [ "uno:5V", "chip1:VCC", "red", [ "v17.04", "h157.33", "v38.4" ] ],
+    [ "chip1:OUTA", "uno:A2", "orange", [ "h-9.6", "v-19.2", "h44.07" ] ],
+    [ "pot1:SIG", "chip1:INA-", "green", [ "v19.2", "h172", "v-163.2" ] ],
+    [ "pot2:SIG", "chip1:INA+", "green", [ "v19.2", "h85.6", "v-163.2" ] ],
+    [ "chip1:OUTB", "uno:A3", "orange", [ "h11.41", "v-28.8", "h-57.6" ] ],
+    [ "pot3:SIG", "chip1:INB-", "green", [ "v9.6", "h-68", "v-134.4" ] ],
+    [ "pot4:SIG", "chip1:INB+", "green", [ "v19.2", "h-183.2", "v-124.8" ] ],
+    [ "uno:GND.1", "pot1:GND", "black", [ "v-50.06", "h-210.97", "v57.6" ] ],
+    [ "pot1:GND", "pot2:GND", "black", [ "v0" ] ],
+    [ "pot3:GND", "uno:GND.1", "black", [ "v-226", "h-249.6", "v57.6" ] ],
+    [ "pot4:GND", "uno:GND.1", "black", [ "v-226", "h-144" ] ],
+    [ "vcc1:VCC", "pot4:VCC", "red", [ "v19.2", "h249.6" ] ],
+    [ "vcc1:VCC", "pot3:VCC", "red", [ "v19.2", "h153.6", "v-76.8" ] ],
+    [ "vcc1:VCC", "pot2:VCC", "red", [ "v19.2", "h-182.4" ] ],
+    [ "vcc1:VCC", "pot1:VCC", "red", [ "v19.2", "h-249.6" ] ]
+  ],
+  "dependencies": {}
+}
